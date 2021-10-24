@@ -15,7 +15,8 @@ const waitingMessage = [
   "Alright, asking google...",
   "Yes master, I will obey",
   "Okay, okay. I will work",
-  "You know, my job is only to get the answer from Wolfram. I dont actually solve these myself"
+  "You know, my job is only to get the answer from Wolfram. I dont actually solve these myself",
+  "If I fail to deliver your answer, you can go query it yourself at wolfram"
 ];
 
 async function reply(messages, replyToken) {
@@ -55,7 +56,7 @@ async function dm(messages, userId) {
 async function callWolfram(eqString) {
   let result = [];
   let chungus = await fetch(
-    `http://api.wolframalpha.com/v2/query?appid=${APPID}&input=${eqString}&format=image,plaintext&output=json`
+    `https://api.wolframalpha.com/v2/query?appid=${APPID}&input=${eqString}&format=image,plaintext&output=json`
   );
   let objectedChungus = await chungus.json();
   objectedChungus.queryresult.pods.forEach(pod => {
@@ -108,64 +109,8 @@ async function handleRequest(request) {
       }
     }
 
-    /*fogg.message.events
-      .filter(e => e.type === "message")
-      .filter(e => e.message.type === "text")
-      .filter(e => e.source.type === "user").forEach( async kejadian => {
-      if (kejadian.message.text === "/help") await reply(helpMessage, kejadian.replyToken);
-      else {
-        if (kejadian.message.text.startsWith("/solve")) {
-          const { solution, graph } = await callWolfram(kejadian.message.text.slice(7));
-
-          await reply([{type: "text", text: waitingMessage[Math.floor(Math.random()*waitingMessage.length)]}], kejadian.replyToken);
-
-          await dm([
-            {type: "text", text: `Real solution: ${solution}`},
-            {type: "text", text: "Graphical plot:"},
-            {type: "image", originalContentUrl: graph, previewImageUrl: graph}
-          ], kejadian.source.userId);
-
-        } else await reply("command not found", kejadian.replyToken);
-      }
-    });*/
-
     return new Response("Ok");
   }
 
   return new Response("No");
 }
-
-
-
-
-/**
- *
- * {
-      "message": [
-        {
-          "destination": "Ua7f64e59c7a79d1bb59454d245a99fa6",
-          "events": [
-            {
-              "type": "message",
-              "message": {
-                "type": "text",
-                "id": "14933177287272",
-                "text": "/help"
-              },
-              "timestamp": 1634540408415,
-              "source": {
-                "type": "user",
-                "userId": "U20d18fa271b64ae292cda9a329b5bad8"
-              },
-              "replyToken": "eb309b6a3df84653b39f1dbae767bd95",
-              "mode": "active"
-            }
-          ]
-        }
- */
-
-//if(kejadian.message.text === "you suck") await reply("and?", kejadian.replyToken);
-//reply(waitingMessage, kejadian.replyToken);
-//reply("Real solution: " + solution, kejadian.source.userId);
-//reply("Graphical plot:", kejadian.source.userId);
-//reply(graph, kejadian.source.userId, "image");

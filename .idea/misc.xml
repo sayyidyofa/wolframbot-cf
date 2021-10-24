@@ -4,4 +4,7 @@
     <option name="show" value="ASK" />
     <option name="description" value="" />
   </component>
+  <component name="WebPackConfiguration">
+    <option name="mode" value="DISABLED" />
+  </component>
 </project>

@@ -1,4 +1,4 @@
-name = "wolframbot"
+name = "your_bot_name"
 type = "javascript"
 
 account_id = ""

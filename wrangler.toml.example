@@ -1,0 +1,9 @@
+name = "wolframbot"
+type = "javascript"
+
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+compatibility_date = "2021-10-09"
+vars = { APPID = "", CHANNEL_ACCESS_TOKEN = "", ENDPOINT= "" }

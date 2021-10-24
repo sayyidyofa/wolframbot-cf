@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "name": "wolframbot",
+  "version": "1.0.0",
+  "description": "LINE Bot for Worlfam Alpha",
+  "main": "index.js",
+  "scripts": {
+    "dev": "miniflare --watch --debug",
+    "format": "prettier --write '**/*.{js,css,json,md}'"
+  },
+  "author": "Sayyid Yofa <sayyidyofa@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "miniflare": "^1.4.1",
+    "prettier": "^1.18.2"
+  },
+  "dependencies": {
+    "sync-fetch": "^0.3.1"
+  }
+}

@@ -14,7 +14,5 @@
     "miniflare": "^1.4.1",
     "prettier": "^1.18.2"
   },
-  "dependencies": {
-    "sync-fetch": "^0.3.1"
-  }
+  "dependencies": {}
 }

@@ -1,10 +1,8 @@
-## Wolfram Alpha LINE Bot (CF Edition)
+## Wolfram Alpha LINE Bot
 
 This is the source code for one of my projects that is hosted in Cloudflare using Workers.
 
 Read more about it in my [Cloudflare Page](https://wolframbot-page.pages.dev)
-
-The original bot is implemented using Flask. Source: [Github repo](https://github.com/sayyidyofa/WolframBot)
 
 ### Develop
 
